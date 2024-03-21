@@ -1,0 +1,154 @@
+:root {
+  --paragraph-color: #7e7d7d;
+  --border-radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+body {
+  color: #222;
+  background: linear-gradient(180deg, #64cddb 0%, #36abd0 100%);
+  padding-top: 4em;
+}
+h2,
+p {
+  margin: 0;
+}
+
+.card {
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+  border-radius: var(--border-radius);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.card header {
+  padding: 1em;
+}
+
+.card-section {
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.card-section h2 {
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+.card-section p {
+  font-weight: normal;
+  color: var(--paragraph-color);
+}
+
+.counter-ui-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter {
+  font-size: 5em;
+  font-weight: bold;
+  width: 1.5em;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--paragraph-color);
+  height: 40px;
+  width: 40px;
+  border-radius: var(--border-radius);
+}
+button:focus,
+button:hover {
+  outline: #39a7b8 auto 1px;
+}
+
+footer {
+  color: #999;
+  text-align: center;
+  padding: 2em 1em 1em;
+}
+footer span {
+  font-size: 0.8em;
+}
+
+/* Toy Inventory Card */
+#toy-inventory-card {
+  margin-top: 20px;
+}
+
+#toy-inventory-card .card-section {
+  text-align: left;
+  padding-left: 30px;
+}
+
+#toy-inventory-card .card-section button {
+  display: block;
+  background: #f4f4f4;
+  width: 100px;
+  height: 60px;
+  border: 1px solid black;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+#toy-inventory-card .card-section li button {
+  height: 30px;
+  width: 30px;
+  margin-right: 15px;
+}
+.inventory-ui-container {
+  margin: 0;
+  padding: 0;
+}
+.inventory-ui-container li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0;
+  margin: 0;
+}
+.li_label {
+  font-size: 1.3em;
+}
+
+/* Icons */
+
+.icon-bone,
+.icon-ball,
+.icon-circle,
+.icon-rabbit {
+  width: 64px;
+  height: 64px;
+  image-rendering: pixelated;
+  display: inline-block;
+  background: url("https://assets.codepen.io/21542/Toys.png") no-repeat
+    no-repeat;
+  background-size: 256px;
+  vertical-align: middle;
+  position: relative;
+  top: -8px;
+}
+.icon-ball {
+  background-position: -64px;
+}
+.icon-circle {
+  background-position: -128px;
+}
+.icon-rabbit {
+  background-position: -192px;
+}

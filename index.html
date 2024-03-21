@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"></script>
+  <script src="dogwalk.js"></script>
+  <title>Dog Walks</title>
+</head>
+
+<body>
+  <div id="counter-card" class="card">
+    <header data-bind="text: counterHeader">
+    </header>
+    <div class="card-section">
+      <h2>Hello, <span data-bind="text: firstName"></span></h2>
+      <p>How many walks will we take today?</p>
+      <div class="counter-ui-container">
+        <button data-bind="click: decrease">-</button>
+        <span class="counter" data-bind="text: count"></span>
+        <button data-bind="click: increase">+</button>
+      </div>
+      <p>
+        Your dog is <span data-bind="text: dogStatus"></span>
+      </p>
+    </div>
+    <footer>
+      <span data-bind="text: footerText">Have a tail wagging day!</span>
+    </footer>
+  </div>
+  <div id="toy-inventory-card" class="card">
+    <header data-bind="text: inventoryHeader"></header>
+    <div class="card-section">
+      <h2>Toy Inventory</h2>
+      <p data-bind="visible: inventory.length > 0">These are the assets we
+        have to work with</p>
+      <p data-bind="visible: inventory.length === 0">You don't have any toys
+        yet.</p>
+      <button data-bind="click: addItem, enable: inventory.length < 4">+ Add
+        Toy</button>
+      <ul class="inventory-ui-container" data-bind="foreach: inventory">
+        <li>
+          <span>
+            <span data-bind="class: $data.icon"></span>
+            <span data-bind="text: $data.text"></span>
+          </span>
+          <span>
+            <button
+              data-bind="click: $parent.removeItem, attr: {'item-index': $index}">&times;</button>
+          </span>
+        </li>
+      </ul>
+    </div>
+    <footer>
+      <span data-bind="text: footerText"><span>
+    </footer>
+  </div>
+</body>
+
+</html>
