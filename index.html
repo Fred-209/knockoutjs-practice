@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css">
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/knockout-validation/2.0.4/knockout.validation.js"></script>
   <script src="dogwalk.js"></script>
   <title>Dog Walks</title>
 </head>
@@ -53,6 +55,51 @@
           </span>
         </li>
       </ul>
+    </div>
+    <footer>
+      <span data-bind="text: footerText"><span>
+    </footer>
+  </div>
+  <div id="form-card" class="card">
+    <header data-bind="text: formHeader"></header>
+    <div class="card-section" data-bind="visible: hasBeenSubmitted()">
+      <h2>Thank you for submitting the form!</h2>
+      <p>Please check your email for a confirmation link.</p>
+    </div>
+    <div class="card-section" data-bind="visible: !hasBeenSubmitted()">
+      <h2>Create Account</h2>
+      <p>Enter your name and details to get that tail wagging</p>
+
+      <form data-bind="submit: handleSubmit">
+        <div class="field">
+          <label for="first-name">First Name*</label>
+          <input data-bind="value: firstName, css: { error: firstName.error() }"
+            type="text" name="first-name" id="first-name">
+        </div>
+        <div class="field">
+          <label for="email">Email Address*</label>
+          <input data-bind="value: emailAddress" type="text" name="email"
+            id="email" placeholder="name@example.com">
+        </div>
+
+        <div class="field">
+          <label for="subscription">Subscription*</label>
+          <div class="select-container">
+            <select data-bind="value: subscriptionType" name="subscription"
+              id="subscription">
+              <option value="standard">Standard</option>
+              <option value="pro">Pro</option>
+              <option value="superPro">Super Pro</option>
+            </select>
+            <svg class="select_arrow" version="1.1"
+              xmlns="http://www.w3.org/2000/svg" width="30"
+              viewBox="0 0 768 768">
+              <path fill="#222" d="M223.5 319.5h321l-160.5 160.5z"></path>
+            </svg>
+          </div>
+        </div>
+        <input type="submit" value="Continue">
+      </form>
     </div>
     <footer>
       <span data-bind="text: footerText"><span>
